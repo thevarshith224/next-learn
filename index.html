@@ -1,27 +1,72 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>1K Products - Premium Sneakers</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; }
-    header, footer { background-color: #000; color: white; text-align: center; padding: 20px; }
-    .hero { text-align: center; padding: 40px 20px; background: white; }
-    .features { background: #eee; padding: 20px; }
-    .features ul { max-width: 600px; margin: auto; text-align: left; }
-    .features li { margin: 10px 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    .navbar a:hover {
+      color: #FFD700; /* Gold on hover */
+    }
+
+    /* Header */
+    header {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .features {
+      background: white;
+      padding: 20px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
   </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+  </div>
+
   <header>
     <h1>1K Products</h1>
-    <p>1000 Personalized items. 1 product .Unlimited Vision.</p>
+    <p>1000 Personalized items. 1 product. Unlimited Vision.</p>
   </header>
+
   <div class="hero">
     <h2>Premium Sneakers - Personalized Like Never Before</h2>
     <p>Place your basic order. Get a personal visit. Choose your color, fit, and custom touches like date labels or signatures.</p>
   </div>
+
   <section class="features">
     <h3>Why Choose Us?</h3>
     <ul>
@@ -32,34 +77,9 @@
       <li>Each executive handles just 30 orders/month</li>
     </ul>
   </section>
+
   <footer>
     &copy; 2025 1K Products. All rights reserved.
   </footer>
-</body>
-</html>
-
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Snake Game</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div id="game-container">
-		<canvas id="gc" class="game-canvas" width="400" height="400"></canvas>
-	</div>
-	<div class="keys">
-	  <a class="up arr" onclick="Snake.action('up')">
-	    <i class="chevron up"></i></a>
-	  <br />
-	  <a class="left arr" onclick="Snake.action('left')">
-	    <i class="chevron left"></i></a>
-	  <a class="down arr" onclick="Snake.action('down')">
-	    <i class="chevron down"></i></a>
-	  <a class="right arr" onclick="Snake.action('right')">
-	    <i class="chevron right"></i></a>
-	</div>
-	<script type="text/javascript" src="game.js"></script>
 </body>
 </html>

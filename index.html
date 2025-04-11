@@ -8,47 +8,109 @@
   <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
   <style>
-    /* Existing styles remain same, add these new styles */
-    .countdown-timer {
-      background: #1A1A2E;
-      padding: 40px 20px;
-      border-radius: 15px;
-      margin: 50px auto;
-      max-width: 800px;
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #F8F5F2; /* Soft Ivory */
+      margin: 0;
+      color: #2D3436; /* Charcoal */
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #1A1A2E; /* Deep Navy */
+      padding: 20px;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
-    .timer-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 25px;
+    .navbar a {
+      color: #FFD700; /* Gold */
+      text-decoration: none;
+      margin: 0 25px;
+      transition: all 0.3s ease;
+      font-weight: 600;
     }
 
-    .timer-unit {
-      background: rgba(255,215,0,0.1);
-      padding: 20px 30px;
-      border-radius: 10px;
-      min-width: 120px;
+    .navbar a:hover {
+      color: #FF6B6B; /* Coral */
+      transform: translateY(-2px);
     }
 
-    .timer-number {
-      font-size: 2.8rem;
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1A1A2E 0%, #2D3436 100%);
       color: #FFD700;
-      font-weight: bold;
-      margin-bottom: 5px;
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 3px solid #FF6B6B;
     }
 
-    .timer-label {
-      color: #FF6B6B;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-    }
-
-    /* Added to existing styles */
     .hero {
-      margin-bottom: 0; /* Remove bottom margin for timer placement */
+      text-align: center;
+      padding: 80px 20px;
+      animation: fadeIn 1s ease-out;
+      background: linear-gradient(45deg, #FFD700 10%, #F8F5F2 90%);
+    }
+
+    .features {
+      background: #FFFFFF;
+      padding: 40px;
+      max-width: 800px;
+      margin: 40px auto;
+      animation: fadeIn 1s ease-out;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(26,26,46,0.1);
+      border: 2px solid #FFD700;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .features li {
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards;
+      padding: 15px;
+      margin: 10px 0;
+      background: #F8F5F2;
+      border-left: 4px solid #FF6B6B;
+    }
+
+    .features li:nth-child(1) { animation-delay: 0.2s; }
+    .features li:nth-child(2) { animation-delay: 0.4s; }
+    .features li:nth-child(3) { animation-delay: 0.6s; }
+    .features li:nth-child(4) { animation-delay: 0.8s; }
+    .features li:nth-child(5) { animation-delay: 1s; }
+
+    /* CTA Button */
+    .reserve-button {
+      background: #FF6B6B; /* Coral */
+      color: white;
+      padding: 18px 45px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 20px;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+    }
+
+    .reserve-button:hover {
+      background: #FFD700; /* Gold */
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(255,215,0,0.4);
+    }
+
+    footer {
+      background: #1A1A2E;
+      color: #FFD700;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -79,32 +141,6 @@
     </button>
   </div>
 
-  <!-- Countdown Timer Section -->
-  <div class="countdown-timer">
-    <h3 style="color: #FFD700; font-size: 1.5rem; margin-bottom: 20px;">
-      First Drop Launching In: 
-      <span style="color: #FF6B6B;">1st May 2025 12:00 AM IST</span>
-    </h3>
-    <div class="timer-container">
-      <div class="timer-unit">
-        <div class="timer-number" id="days">00</div>
-        <div class="timer-label">Days</div>
-      </div>
-      <div class="timer-unit">
-        <div class="timer-number" id="hours">00</div>
-        <div class="timer-label">Hours</div>
-      </div>
-      <div class="timer-unit">
-        <div class="timer-number" id="minutes">00</div>
-        <div class="timer-label">Minutes</div>
-      </div>
-      <div class="timer-unit">
-        <div class="timer-number" id="seconds">00</div>
-        <div class="timer-label">Seconds</div>
-      </div>
-    </div>
-  </div>
-
   <section class="features">
     <h3 style="color: #1A1A2E; font-size: 2rem; margin-bottom: 30px;">Why Choose Us?</h3>
     <ul style="list-style: none; padding: 0;">
@@ -119,34 +155,5 @@
   <footer>
     &copy; 2025 1K Products. All rights reserved.
   </footer>
-
-  <!-- Countdown Timer Script -->
-  <script>
-    const countDownDate = new Date("May 1, 2025 00:00:00 GMT+0530").getTime();
-
-    const updateTimer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").textContent = days.toString().padStart(2, "0");
-      document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
-      document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
-      document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
-
-      if (distance < 0) {
-        clearInterval(updateTimer);
-        document.querySelector(".countdown-timer").innerHTML = `
-          <h3 style="color: #FF6B6B; font-size: 2rem;">
-            🎉 First Drop Live! Reserve Your Pair Now
-          </h3>
-        `;
-      }
-    }, 1000);
-  </script>
 </body>
 </html>

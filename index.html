@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>1K Products - Premium Sneakers</title>
+  <!-- Snipcart Scripts -->
+  <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,10 +25,12 @@
       color: white;
       text-decoration: none;
       margin: 0 15px;
+      transition: 0.3s ease;
     }
 
     .navbar a:hover {
-      color: #FFD700; /* Gold on hover */
+      color: #FFD700;
+      transform: scale(1.05);
     }
 
     /* Header */
@@ -39,6 +44,7 @@
     .hero {
       text-align: center;
       padding: 40px;
+      animation: fadeIn 1s ease-out;
     }
 
     .features {
@@ -46,24 +52,15 @@
       padding: 20px;
       max-width: 600px;
       margin: 20px auto;
-    }    /* ===== ADD ANIMATIONS BELOW THIS LINE ===== */
+      animation: fadeIn 1s ease-out;
+    }
+
     /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .hero, .features {
-      animation: fadeIn 1s ease-out;
-    }
-
-    /* Hover effects */
-    .navbar a:hover, .features li:hover {
-      transform: scale(1.05);
-      transition: 0.3s ease;
-    }
-
-    /* List item animations */
     .features li {
       opacity: 0;
       animation: fadeIn 0.5s ease forwards;
@@ -75,11 +72,29 @@
     .features li:nth-child(4) { animation-delay: 0.8s; }
     .features li:nth-child(5) { animation-delay: 1s; }
 
-    /* Add transitions */
-    .navbar a, .features li {
+    /* CTA Button */
+    .reserve-button {
+      background: #000;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      margin-top: 20px;
       transition: 0.3s ease;
     }
-    /* ===== END OF ANIMATIONS ===== */
+
+    .reserve-button:hover {
+      background: #FFD700;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
@@ -99,6 +114,14 @@
   <div class="hero">
     <h2>Premium Sneakers - Personalized Like Never Before</h2>
     <p>Place your basic order. Get a personal visit. Choose your color, fit, and custom touches like date labels or signatures.</p>
+    <button class="reserve-button snipcart-add-item" 
+      data-item-id="sneaker-1" 
+      data-item-price="10000" 
+      data-item-url="/" 
+      data-item-name="1K Premium Sneakers"
+      data-item-custom1-name="Customization Notes">
+      Reserve Your Pair (₹10,000)
+    </button>
   </div>
 
   <section class="features">

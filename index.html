@@ -3,116 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>1K Products - Premium products</title>
+  <title>1K Products - Premium Sneakers</title>
   <!-- Snipcart Scripts -->
   <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #F8F5F2; /* Soft Ivory */
-      margin: 0;
-      color: #2D3436; /* Charcoal */
-    }
-
-    /* Navigation Bar */
-    .navbar {
-      background-color: #1A1A2E; /* Deep Navy */
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .navbar a {
-      color: #FFD700; /* Gold */
-      text-decoration: none;
-      margin: 0 25px;
-      transition: all 0.3s ease;
-      font-weight: 600;
-    }
-
-    .navbar a:hover {
-      color: #FF6B6B; /* Coral */
-      transform: translateY(-2px);
-    }
-
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #1A1A2E 0%, #2D3436 100%);
-      color: #FFD700;
-      text-align: center;
-      padding: 60px 20px;
-      border-bottom: 3px solid #FF6B6B;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      animation: fadeIn 1s ease-out;
-      background: linear-gradient(45deg, #FFD700 10%, #F8F5F2 90%);
-    }
-
-    .features {
-      background: #FFFFFF;
-      padding: 40px;
-      max-width: 800px;
-      margin: 40px auto;
-      animation: fadeIn 1s ease-out;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(26,26,46,0.1);
-      border: 2px solid #FFD700;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .features li {
-      opacity: 0;
-      animation: fadeIn 0.5s ease forwards;
-      padding: 15px;
-      margin: 10px 0;
-      background: #F8F5F2;
-      border-left: 4px solid #FF6B6B;
-    }
-
-    .features li:nth-child(1) { animation-delay: 0.2s; }
-    .features li:nth-child(2) { animation-delay: 0.4s; }
-    .features li:nth-child(3) { animation-delay: 0.6s; }
-    .features li:nth-child(4) { animation-delay: 0.8s; }
-    .features li:nth-child(5) { animation-delay: 1s; }
-
-    /* CTA Button */
-    .reserve-button {
-      background: #FF6B6B; /* Coral */
-      color: white;
-      padding: 18px 45px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 20px;
-      margin-top: 30px;
-      transition: all 0.3s ease;
-      letter-spacing: 1px;
-      box-shadow: 0 5px 15px rgba(255,107,107,0.3);
-    }
-
-    .reserve-button:hover {
-      background: #FFD700; /* Gold */
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(255,215,0,0.4);
-    }
-
-    footer {
-      background: #1A1A2E;
-      color: #FFD700;
-      text-align: center;
-      padding: 30px;
-      margin-top: 60px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -123,37 +18,109 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <header>
-    <h1 style="font-size: 3.5rem; margin-bottom: 15px;">1K Products</h1>
-    <p style="font-size: 1.2rem;">1000 Personalized items. 1 product. Unlimited Vision.</p>
+  <header class="hero-header">
+    <div class="header-content">
+      <h1>1K Products</h1>
+      <p class="subtitle">Crafting Legends, One Pair at a Time</p>
+      <div class="sneaker-3d-preview">
+        <img src="assets/sneaker-3d.png" alt="3D Sneaker Preview" class="rotating">
+      </div>
+    </div>
   </header>
 
-  <div class="hero">
-    <h2 style="color: #1A1A2E; font-size: 2.5rem;">Premium Sneakers - Personalized Like Never Before</h2>
-    <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Place your basic order. Get a personal visit. Choose your color, fit, and custom touches like date labels or signatures.</p>
+  <!-- Countdown Timer -->
+  <section class="countdown-section">
+    <h2>Next Drop: 1st May 2025</h2>
+    <div class="timer-container">
+      <div class="timer-unit">
+        <span id="days">00</span>
+        <small>Days</small>
+      </div>
+      <div class="timer-unit">
+        <span id="hours">00</span>
+        <small>Hours</small>
+      </div>
+      <div class="timer-unit">
+        <span id="minutes">00</span>
+        <small>Minutes</small>
+      </div>
+      <div class="timer-unit">
+        <span id="seconds">00</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customization Section -->
+  <section class="customization-flow">
+    <div class="flow-container">
+      <div class="flow-card">
+        <div class="card-number">1</div>
+        <h3>Reserve Online</h3>
+        <p>Secure your limited slot with a ₹1,000 deposit</p>
+      </div>
+      <div class="flow-card">
+        <div class="card-number">2</div>
+        <h3>Personalized Session</h3>
+        <p>Our style expert visits you for 45-minute consultation</p>
+      </div>
+      <div class="flow-card">
+        <div class="card-number">3</div>
+        <h3>Craft & Deliver</h3>
+        <p>Receive your bespoke pair in 15 working days</p>
+      </div>
+    </div>
+    
     <button class="reserve-button snipcart-add-item" 
       data-item-id="sneaker-1" 
       data-item-price="10000" 
       data-item-url="/" 
       data-item-name="1K Premium Sneakers"
       data-item-custom1-name="Customization Notes">
-      Reserve Your Pair Now
+      Start Your Journey
     </button>
-  </div>
-
-  <section class="features">
-    <h3 style="color: #1A1A2E; font-size: 2rem; margin-bottom: 30px;">Why Choose Us?</h3>
-    <ul style="list-style: none; padding: 0;">
-      <li>One-of-a-kind design experience</li>
-      <li>Executive visit for size and style selection</li>
-      <li>Custom color, signature & date engraving</li>
-      <li>Limited edition - Only 1000 items per product</li>
-      <li>Each executive handles just 30 orders/month</li>
-    </ul>
   </section>
 
-  <footer>
-    &copy; 2025 1K Products. All rights reserved.
-  </footer>
+  <!-- AR Try-On Section -->
+  <section class="ar-section">
+    <h2>See It On Your Feet</h2>
+    <button id="ar-button" class="ar-trigger">
+      <span class="ar-icon">🕶️</span>
+      Try in AR
+    </button>
+    <p class="ar-note">Works on mobile devices with ARCore/ARKit</p>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-card">
+      <img src="assets/icons/customize-icon.svg" alt="Customization">
+      <h3>Bespoke Design</h3>
+      <p>From thread color to sole engraving - every detail is yours</p>
+    </div>
+    <!-- Repeat similar feature cards -->
+  </section>
+
+  <script src="js/ar.js"></script>
+  <script>
+    // Countdown Timer Script
+    const countDownDate = new Date("May 1, 2025 00:00:00").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days.toString().padStart(2, "0");
+      document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+      document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+      document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+
+      if (distance < 0) clearInterval(timer);
+    }, 1000);
+  </script>
 </body>
 </html>

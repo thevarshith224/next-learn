@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1K Blog - Empire Building Through Footwear</title>
+  <style>
+    /* Reuse your existing CSS + add these */
+    .blog-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .blog-post {
+      margin-bottom: 60px;
+    }
+
+    .blog-title {
+      color: #1A1A2E;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .blog-date {
+      color: #FF6B6B;
+      font-weight: bold;
+    }
+
+    .blog-content {
+      line-height: 1.8;
+      margin-top: 25px;
+    }
+
+    .blog-cta {
+      text-align: center;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a> 
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="blog-container">
+    <div class="blog-post">
+      <h1 class="blog-title">1000 Pairs. 1 Empire Mindset.</h1>
+      <p class="blog-date">May 1, 2024 | 5 min read</p>
+      <div class="blog-content">
+        <!-- Paste your blog content here -->
+        <p>Let’s get one thing straight – these aren’t shoes. They’re a **f*cking statement**...</p>
+        <!-- Full content from previous answer -->
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-cta">
+    <button class="reserve-button" onclick="location.href='index.html'">
+      Claim Your Pair Now
+    </button>
+  </div>
+
+  <footer>
+    &copy; 2025 1K Products. All rights reserved.
+  </footer>
+</body>
+</html>

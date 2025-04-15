@@ -1,0 +1,37 @@
+import React from "react"; import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"; import "./index.css";
+
+function Home() { return ( <div className="bg-gradient-to-r from-black via-gray-900 to-black text-white min-h-screen"> <nav className="bg-gray-900 text-white px-6 py-4 flex justify-between"> <h1 className="text-xl font-bold">1K Products</h1> <div className="space-x-4"> <Link to="/" className="hover:text-yellow-400">Home</Link> <Link to="/about" className="hover:text-yellow-400">About</Link> <Link to="/blog" className="hover:text-yellow-400">Blog</Link> <Link to="/contact" className="hover:text-yellow-400">Contact</Link> </div> </nav>
+
+<header className="text-center py-20 px-4">
+    <h2 className="text-4xl md:text-6xl font-bold text-yellow-400">1000 Personalized items. 1 product. Unlimited Vision.</h2>
+    <p className="mt-4 text-xl text-gray-300">Premium Sneakers - Personalized Like Never Before</p>
+    <p className="mt-2 text-lg text-gray-400">Choose your color, fit, and signature. Executive visit included.</p>
+    <button className="mt-6 px-6 py-3 bg-pink-500 hover:bg-pink-600 rounded-full text-white font-semibold">
+      Reserve Your Pair Now
+    </button>
+  </header>
+
+  <section className="bg-white text-black py-10 px-6 rounded-t-3xl shadow-2xl">
+    <h3 className="text-2xl font-bold text-center mb-6">Why Choose Us?</h3>
+    <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+      <div className="bg-gray-100 p-4 rounded-xl shadow">One-of-a-kind design experience</div>
+      <div className="bg-gray-100 p-4 rounded-xl shadow">Executive visit for size and style selection</div>
+      <div className="bg-gray-100 p-4 rounded-xl shadow">Custom color, signature & date engraving</div>
+      <div className="bg-gray-100 p-4 rounded-xl shadow">Limited edition - Only 1000 items per product</div>
+      <div className="bg-gray-100 p-4 rounded-xl shadow">Each executive handles just 30 orders/month</div>
+    </div>
+  </section>
+</div>
+
+); }
+
+function About() { return <div className="p-10 text-white">About 1K Products - We’re building India’s most premium custom sneaker experience.</div>; }
+
+function Blog() { return <div className="p-10 text-white">Blog Coming Soon. Stay Tuned!</div>; }
+
+function Contact() { return <div className="p-10 text-white">Contact Us: contact@1kproducts.co.in</div>; }
+
+function App() { return ( <Router> <Routes> <Route path="/" element={<Home />} /> <Route path="/about" element={<About />} /> <Route path="/blog" element={<Blog />} /> <Route path="/contact" element={<Contact />} /> </Routes> </Router> ); }
+
+export default App;
+

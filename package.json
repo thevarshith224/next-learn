@@ -7,15 +7,17 @@
     "start": "next start",
     "test": "npm run lint && npm run prettier:check"
   },
-  {
   "dependencies": {
-    "next": "^15.3.0" // From 14.2.28
+    "next": "^15.3.0"
   },
   "devDependencies": {
-    "eslint": "^9.24.0", // From 8.52.0
-    "prettier": "^3.5.3" // From 3.0.3
-  }
-}
+    "eslint": "^9.24.0",
+    "prettier": "^3.5.3",
+    "@vercel/style-guide": "^6.0.0",
+    "eslint-config-next": "^15.3.0",
+    "eslint-config-prettier": "^10.1.2",
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  },
   "packageManager": "pnpm@8.7.0",
   "engines": {
     "node": ">=18.17.0"

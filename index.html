@@ -3,299 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1K Products</title>
-  
-  <!-- Google Fonts PROPER LINK -->
+  <title>1K Products - Premium Personalized Sneakers</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  
-  <!-- Your CSS -->
   <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css">
 </head>
-  <!-- Snipcart Scripts -->
-  <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #F8F5F2; /* Soft Ivory */
-      margin: 0;
-      color: #2D3436; /* Charcoal */
-    }
 
-    /* Navigation Bar */
-    .navbar {
-      background-color: #1A1A2E; /* Deep Navy */
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .navbar a {
-      color: #FFD700; /* Gold */
-      text-decoration: none;
-      margin: 0 25px;
-      transition: all 0.3s ease;
-      font-weight: 600;
-    }
-
-    .navbar a:hover {
-      color: #FF6B6B; /* Coral */
-      transform: translateY(-2px);
-    }
-
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #1A1A2E 0%, #2D3436 100%);
-      color: #FFD700;
-      text-align: center;
-      padding: 60px 20px;
-      border-bottom: 3px solid #FF6B6B;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      animation: fadeIn 1s ease-out;
-      background: linear-gradient(45deg, #FFD700 10%, #F8F5F2 90%);
-    }
-
-    .features {
-      background: #FFFFFF;
-      padding: 40px;
-      max-width: 800px;
-      margin: 40px auto;
-      animation: fadeIn 1s ease-out;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(26,26,46,0.1);
-      border: 2px solid #FFD700;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .features li {
-      opacity: 0;
-      animation: fadeIn 0.5s ease forwards;
-      padding: 15px;
-      margin: 10px 0;
-      background: #F8F5F2;
-      border-left: 4px solid #FF6B6B;
-    }
-
-    .features li:nth-child(1) { animation-delay: 0.2s; }
-    .features li:nth-child(2) { animation-delay: 0.4s; }
-    .features li:nth-child(3) { animation-delay: 0.6s; }
-    .features li:nth-child(4) { animation-delay: 0.8s; }
-    .features li:nth-child(5) { animation-delay: 1s; }
-
-    /* CTA Button */
-    .reserve-button {
-      background: #FF6B6B; /* Coral */
-      color: white;
-      padding: 18px 45px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 20px;
-      margin-top: 30px;
-      transition: all 0.3s ease;
-      letter-spacing: 1px;
-      box-shadow: 0 5px 15px rgba(255,107,107,0.3);
-    }
-    <!-- URGENCY BAR -->
-   <div class="urgency-bar">
-     <p>🚨 Only 47/1000 pairs left for May 2024 drop</p>
-     <div class="progress-bar">
-       <div class="progress" style="width: 53%"></div>
-     </div>
-   </div>
-
-    .reserve-button:hover {
-      background: #FFD700; /* Gold */
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(255,215,0,0.4);
-    }
-
-    footer {
-      background: #1A1A2E;
-      color: #FFD700;
-      text-align: center;
-      padding: 30px;
-      margin-top: 60px;
-    }
-  </style>
-</head>
 <body>
-  <!-- Navigation Bar -->
-  <div class="navbar">
+  <!-- Navigation -->
+  <nav class="navbar">
     <a href="index.html" class="logo">
-    <img src="assets/logo.png" alt="1K Products Logo">
-  </a>
+      <img src="assets/logo.png" alt="1K Products Logo">
+    </a>
     <div class="nav-links">
-  <a href="index.html" class="active">Home</a> <!-- Added active class -->
-  <a href="about.html">About</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
     </div>
-  <header>
-    <h1 style="font-size: 3.5rem; margin-bottom: 15px;">1K Products</h1>
-    <p style="font-size: 1.2rem;">1000 Personalized items. 1 product. Unlimited Vision.</p>
+  </nav>
+
+  <!-- Header -->
+  <header class="hero">
+    <h1>1K Products</h1>
+    <p class="tagline">1000 Personalized items. 1 product. Unlimited Vision.</p>
   </header>
 
-  <div class="hero">
-    <h2>Premium Sneakers - Personalized Like Never Before</h2>
-    <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Place your basic order. Get a personal visit. Choose your color, fit, and custom touches like date labels or signatures.</p>
-    <button class="reserve-button snipcart-add-item" 
-      data-item-id="sneaker-1" 
-      data-item-price="10000" 
-      data-item-url="/" 
-      data-item-name="1K Premium Sneakers"
-      data-item-custom1-name="Customization Notes">
-      Reserve Your Pair Now
-    </button>
-  </div>
-<!-- Product Showcase -->
-<section class="product-showcase">
-  <img src="images/premium-sneaker.jpg" 
-       alt="1K Premium Sneakers ₹10,000" 
-       class="sneaker-image">
-  
-  <div class="launch-info">
-    <h2>1000 Items Deploying On</h2>
-    <p class="launch-date">1st May 2025 | 12:00 AM IST</p>
-    
-    <div class="countdown-container">
-  <h3>1000 Items Deploying On</h3>
-  <p class="launch-date">1st May 2025 | 12:00 AM IST</p>
-  
-  <div class="countdown-grid">
-    <div class="countdown-item">
-      <span id="days">13</span>
-      <small>Days</small>
-    </div>
-    <div class="countdown-item">
-      <span id="hours">01</span>
-      <small>Hours</small>
-    </div>
-    <div class="countdown-item">
-      <span id="minutes">45</span>
-      <small>Minutes</small>
-    </div>
-    <div class="countdown-item">
-      <span id="seconds">46</span>
-      <small>Seconds</small>
-    </div>
-  </div>
-    </div>
-</section>
+  <!-- Main Content -->
+  <main class="main-container">
+    <!-- Product Showcase -->
+    <section class="product-showcase">
+      <img src="images/premium-sneaker.jpg" alt="Premium Sneakers" class="sneaker-image">
+      
+      <div class="countdown-container">
+        <h2>1000 Items Deploying On</h2>
+        <p class="launch-date">1st May 2025 | 12:00 AM IST</p>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span id="days">00</span>
+            <small>Days</small>
+          </div>
+          <div class="countdown-item">
+            <span id="hours">00</span>
+            <small>Hours</small>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<style>
-/* Add this CSS */
-.product-showcase {
-  max-width: 1000px;
-  margin: 50px auto;
-  text-align: center;
-}
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <button class="reserve-button snipcart-add-item" 
+        data-item-id="sneaker-1" 
+        data-item-price="10000" 
+        data-item-url="/" 
+        data-item-name="1K Premium Sneakers"
+        data-item-custom1-name="Customization Notes">
+        Reserve Your Pair Now
+      </button>
+    </section>
 
-.sneaker-image {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+    <!-- Features -->
+    <section class="features-section">
+      <h2>Why Choose Us?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Unique Design Experience</h3>
+          <p>Personalized creative process with experts</p>
+        </div>
+        <div class="feature-card">
+          <h3>Executive Visits</h3>
+          <p>At-home size & style selection</p>
+        </div>
+        <div class="feature-card">
+          <h3>Custom Engraving</h3>
+          <p>Signature, dates, or special messages</p>
+        </div>
+        <div class="feature-card">
+          <h3>Limited Edition</h3>
+          <p>Only 1000 items per product line</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-.launch-info {
-  margin-top: 30px;
-  background: #1A1A2E;
-  padding: 30px;
-  border-radius: 15px;
-}
-
-.launch-date {
-  color: #FFD700;
-  font-size: 1.2rem;
-  margin: 15px 0;
-}
-
-.countdown-timer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 25px;
-}
-
-.timer-unit {
-  background: rgba(255,215,0,0.1);
-  padding: 15px 25px;
-  border-radius: 10px;
-  min-width: 90px;
-}
-
-.timer-unit span {
-  font-size: 2rem;
-  color: #FFD700;
-  font-weight: bold;
-  display: block;
-}
-
-.timer-unit small {
-  color: #FF6B6B;
-  font-size: 0.9rem;
-}
-</style>
-
-<script>
-// Add this JavaScript
-const countDownDate = new Date("May 1, 2025 00:00:00").getTime();
-
-const timer = setInterval(function() {
-  const now = new Date().getTime();
-  const distance = countDownDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
-  document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
-  document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
-  document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
-
-  if (distance < 0) {
-    clearInterval(timer);
-    document.querySelector(".countdown-timer").innerHTML = 
-      "<h3 style='color:#FF6B6B'>Drop Live! Reserve Now</h3>";
-  }
-}, 1000);
-</script>
-  <section class="features">
-  <h2>Why Choose Us?</h2>
-  <div class="feature-grid">
-    <div class="feature-card">
-      <h3>One-of-a-kind Design Experience</h3>
-      <p>Personalized creative process with our experts</p>
-    </div>
-    <div class="feature-card">
-      <h3>Executive Visits</h3>
-      <p>At-home size & style selection service</p>
-    </div>
-    <div class="feature-card">
-      <h3>Custom Engraving</h3>
-      <p>Signature, dates, or special messages</p>
-    </div>
-    <div class="feature-card">
-      <h3>Limited Edition</h3>
-      <p>Only 1000 items per product line</p>
-    </div>
-  </div>
-  </section>
-
-  <footer>
-    &copy; 2025 1K Products. All rights reserved.
+  <!-- Footer -->
+  <footer class="main-footer">
+    <p>&copy; 2025 1K Products. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+  <script>
+    // Countdown Timer
+    function updateCountdown() {
+      const countDownDate = new Date("May 1, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days.toString().padStart(2, "0");
+      document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+      document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+      document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+
+      if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.querySelector(".countdown-container").innerHTML = `
+          <h2 class="drop-live">Drop Live! Reserve Now</h2>
+          <p class="limited-stock">Last few pairs remaining!</p>
+        `;
+      }
+    }
+
+    // Initialize Countdown
+    const countdownTimer = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call
+
+    // Scroll Reveal Animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(element => revealObserver.observe(element));
+
+    // Set Active Navigation Link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if(link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>

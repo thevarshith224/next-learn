@@ -259,24 +259,6 @@ body {
     font-size: 0.9rem;
   }
 }
-/* 🟢 ADD TO styles/main.css */
-.nav-links {
-  display: flex !important; /* Force flex layout */
-  gap: 1.5rem !important;
-}
-
-.logo img {
-  max-width: 120px !important; /* Fix logo size */
-}
-
-.hero {
-  padding: 4rem 1rem !important; /* Restore hero spacing */
-  text-align: center !important;
-}
-
-.countdown-grid {
-  grid-template-columns: repeat(4, 1fr) !important; /* Fix timer layout */
-}
 
 /* ===== Scroll Animation Trigger ===== */
 .reveal {
@@ -288,4 +270,4 @@ body {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-    }
+}

@@ -1,21 +1,83 @@
-/* styles/main.css */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Navigation Bar */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #F8F5F2;
+  line-height: 1.6;
+
 .navbar {
-  background: #1A1A2E;
-  padding: 15px 5%;
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #1A1A2E;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo img {
-  width: 120px;
+  width: 120px; /* Perfect logo size */
   height: auto;
+  transition: transform 0.3s ease;
 }
 
-/* Add other styles here */
+.logo:hover img {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #FF6B6B;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FF6B6B;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 5%;
+    flex-direction: column;
+  }
+  
+  .logo img {
+    width: 100px;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

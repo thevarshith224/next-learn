@@ -26,3 +26,30 @@
   text-decoration: none;
   font-weight: 600;
 }
+/* Add to styles/main.css */
+.nav-links a {
+  /* Existing styles */
+  position: relative;
+  padding-bottom: 3px;
+}
+
+/* Active Page Indicator */
+.nav-links a.active {
+  color: #FF6B6B;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #FF6B6B;
+  animation: underline-grow 0.3s ease;
+}
+
+@keyframes underline-grow {
+  from { width: 0 }
+  to { width: 100% }
+}

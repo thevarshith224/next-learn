@@ -3,72 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1K Blog - Empire Building Through Footwear</title>
-  <style>
-    /* Reuse your existing CSS + add these */
-    .blog-container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 30px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    .blog-post {
-      margin-bottom: 60px;
-    }
-
-    .blog-title {
-      color: #1A1A2E;
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-
-    .blog-date {
-      color: #FF6B6B;
-      font-weight: bold;
-    }
-
-    .blog-content {
-      line-height: 1.8;
-      margin-top: 25px;
-    }
-
-    .blog-cta {
-      text-align: center;
-      margin: 40px 0;
-    }
-  </style>
+  <title>Blog - 1K Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="blog.html">Blog</a> 
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <div class="blog-container">
-    <div class="blog-post">
-      <h1 class="blog-title">1000 Pairs. 1 Empire Mindset.</h1>
-      <p class="blog-date">May 1, 2024 | 5 min read</p>
-      <div class="blog-content">
-        <!-- Paste your blog content here -->
-        <p>Let’s get one thing straight – these aren’t shoes. They’re a **f*cking statement**...</p>
-        <!-- Full content from previous answer -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="/assets/logo.png" alt="1K Logo">
+    </a>
+    
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+      <div class="snipcart-summary snipcart-checkout" style="cursor:pointer">
+        <span class="snipcart-total-price"></span> 🛒 (<span class="snipcart-items-count">0</span>)
       </div>
     </div>
-  </div>
+  </nav>
 
-  <div class="blog-cta">
-    <button class="reserve-button" onclick="location.href='index.html'">
-      Claim Your Pair Now
-    </button>
-  </div>
+  <main class="blog-container">
+    <h1>Latest Updates</h1>
+    
+    <div class="blog-grid">
+      <article class="blog-post">
+        <h2>Customization Trends 2025</h2>
+        <time datetime="2024-03-15">March 15, 2024</time>
+        <p>Discover the latest personalization techniques we're implementing...</p>
+        <a href="#" class="read-more">Read More →</a>
+      </article>
+
+      <article class="blog-post">
+        <h2>Sneaker Care Guide</h2>
+        <time datetime="2024-03-10">March 10, 2024</time>
+        <p>Learn how to maintain your custom sneakers in pristine condition...</p>
+        <a href="#" class="read-more">Read More →</a>
+      </article>
+    </div>
+  </main>
 
   <footer>
-    &copy; 2025 1K Products. All rights reserved.
+    <p>&copy; 2025 1K Products. All rights reserved.</p>
   </footer>
 </body>
 </html>

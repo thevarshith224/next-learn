@@ -61,7 +61,37 @@ color: #222;
       color: #FF6B6B; /* Coral */
       transform: translateY(-2px);
     }
+<!-- Updated Navigation Bar -->
+<div class="navbar">
+  <a href="index.html" class="logo-link">
+    <img src="assets/logo.png" alt="1K Logo" class="logo">
+  </a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
 
+<style>
+/* Add these styles */
+.logo {
+  height: 40px; /* Adjust based on your logo */
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+</style>
     /* Header */
     header {
       background: linear-gradient(135deg, #1A1A2E 0%, #2D3436 100%);

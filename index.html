@@ -1,5 +1,27 @@
+<!-- Emergency Load Check -->
+<script>
+const requiredAssets = [
+  '/styles/main.css',
+  '/public/js/main.js',
+  '/assets/logo.png'
+];
+
+requiredAssets.forEach(asset => {
+  fetch(asset).catch(() => {
+    document.body.innerHTML = `
+      <div style="padding:2rem;text-align:center">
+        <h1>Configuration Error</h1>
+        <p>Missing file: ${asset}</p>
+        <p>Contact support@1kproducts.co.in</p>
+      </div>
+    `;
+  });
+});
+</script>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+  <base href="/">
+<link rel="canonical" href="https://1kproducts.co.in">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +39,12 @@
   <div class="loading-text">Crafting Your Premium Experience</div>
 </div>
 <body>
+  // Add after <body> tag opens
+<script>
+if(window.location.pathname !== '/') {
+  window.location.href = '/';
+}
+</script>
   <!-- Navigation -->
   <nav class="navbar">
     <a href="index.html" class="logo">

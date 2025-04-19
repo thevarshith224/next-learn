@@ -1,191 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Existing meta tags and fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --gold: #D4AF37;
-      --navy: #0A1A2F;
-      --cream: #F5F3EE;
-      --dark-gray: #2A2A2A;
-    }
+/* Updated Premium CSS with 3D Viewer and Loading Animation */
+:root {
+  --gold: #D4AF37;
+  --navy: #0A1A2F;
+  --cream: #F5F3EE;
+  --dark-gray: #2A2A2A;
+}
 
-    body {
-      background: var(--navy);
-      color: var(--cream);
-      font-family: 'Inter', sans-serif;
-    }
+/* Loading Animation */
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--navy);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
 
-    /* Premium Navigation */
-    .navbar {
-      padding: 1.5rem 8%;
-      background: rgba(10, 26, 47, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    }
+.loader-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(212, 175, 55, 0.2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
 
-    .logo img {
-      max-width: 140px;
-      filter: brightness(0) invert(1);
-    }
+.loading-text {
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
 
-    .nav-links a {
-      color: var(--cream);
-      font-weight: 500;
-      position: relative;
-      padding: 0.5rem 1rem;
-    }
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background: var(--gold);
-      transition: width 0.3s ease;
-    }
+/* 3D Product Viewer Styles */
+.product-viewer-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+#sneaker-3dview {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
 
-    /* Luxury Hero Section */
-    .hero {
-      padding: 8rem 5% 4rem;
-      background: linear-gradient(rgba(10, 26, 47, 0.9), rgba(10, 26, 47, 0.9)),
-                  url('assets/luxury-bg.jpg') center/cover;
-      text-align: center;
-    }
+#sneaker-3dview:active {
+  cursor: grabbing;
+}
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      letter-spacing: 2px;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
+.viewer-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
 
-    .tagline {
-      font-size: 1.3rem;
-      color: rgba(245, 243, 238, 0.9);
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
+.rotate-button, .zoom-button {
+  background: rgba(212, 175, 55, 0.8);
+  color: var(--navy);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
-    /* Premium Product Showcase */
-    .product-showcase {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      padding: 6rem 8%;
-      align-items: center;
-    }
+.rotate-button:hover, .zoom-button:hover {
+  background: rgba(212, 175, 55, 1);
+  transform: translateY(-2px);
+}
 
-    .sneaker-image {
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
+/* Enhanced Product Showcase */
+.product-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 6rem 8%;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
 
-    .sneaker-image:hover {
-      transform: translateY(-10px);
-    }
+/* Updated Countdown Timer */
+.countdown-item {
+  position: relative;
+  overflow: hidden;
+}
 
-    /* Luxury Countdown */
-    .countdown-container {
-      background: rgba(245, 243, 238, 0.05);
-      padding: 3rem;
-      border-radius: 16px;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      backdrop-filter: blur(8px);
-    }
+.countdown-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent 45%,
+    rgba(212, 175, 55, 0.1) 50%,
+    transparent 55%
+  );
+  animation: shine 3s infinite;
+}
 
-    .countdown-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
+@keyframes shine {
+  0% { transform: translateX(-50%) rotate(45deg); }
+  100% { transform: translateX(150%) rotate(45deg); }
+}
 
-    .countdown-item {
-      background: linear-gradient(145deg, #0A1A2F 0%, #12263D 100%);
-      padding: 2rem;
-      border-radius: 12px;
-      border: 1px solid rgba(212, 175, 55, 0.2);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    }
+/* Responsive Updates */
+@media (max-width: 768px) {
+  .product-viewer-container {
+    height: 400px;
+  }
+  
+  .viewer-controls {
+    bottom: 10px;
+    flex-direction: column;
+    width: 90%;
+  }
+  
+  .rotate-button, .zoom-button {
+    width: 100%;
+    padding: 0.8rem;
+  }
+}
 
-    .countdown-item span {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    /* Luxury CTA Button */
-    .reserve-button {
-      background: linear-gradient(135deg, #D4AF37 0%, #B89735 100%);
-      color: var(--navy);
-      padding: 1.5rem 4rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
-    }
-
-    .reserve-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.4);
-    }
-
-    /* Premium Features Section */
-    .features-section {
-      padding: 6rem 8%;
-      background: var(--dark-gray);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 3rem;
-      margin-top: 4rem;
-    }
-
-    .feature-card {
-      padding: 2.5rem;
-      background: rgba(245, 243, 238, 0.03);
-      border-radius: 12px;
-      border: 1px solid rgba(212, 175, 55, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-      background: rgba(212, 175, 55, 0.05);
-    }
-
-    .feature-card h3 {
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    /* Luxury Footer */
-    .main-footer {
-      padding: 3rem;
-      background: #0A0A0A;
-      text-align: center;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      border-top: 1px solid rgba(212, 175, 55, 0.2);
-    }
-  </style>
-</head>
-<!-- Rest of your HTML remains the same -->
+@media (max-width: 480px) {
+  .product-viewer-container {
+    height: 300px;
+  }
+  
+  .loader-spinner {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .loading-text {
+    font-size: 1rem;
+  }
+}

@@ -1,163 +1,155 @@
-/* Updated Premium CSS with 3D Viewer and Loading Animation */
-:root {
-  --gold: #D4AF37;
-  --navy: #0A1A2F;
-  --cream: #F5F3EE;
-  --dark-gray: #2A2A2A;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1K Products - Premium Personalized Sneakers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css">
+</head>
 
-/* Loading Animation */
-.page-loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--navy);
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.5s ease;
-}
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="1K Products Logo">
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
-.loader-spinner {
-  width: 60px;
-  height: 60px;
-  border: 4px solid rgba(212, 175, 55, 0.2);
-  border-top-color: var(--gold);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1.5rem;
-}
+  <!-- Header -->
+  <header class="hero">
+    <h1>1K Products</h1>
+    <p class="tagline">1000 Personalized items. 1 product. Unlimited Vision.</p>
+  </header>
 
-.loading-text {
-  color: var(--gold);
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  font-weight: 500;
-}
+  <!-- Main Content -->
+  <main class="main-container">
+    <!-- Product Showcase -->
+    <section class="product-showcase">
+      <img src="images/premium-sneaker.jpg" alt="Premium Sneakers" class="sneaker-image">
+      
+      <div class="countdown-container">
+        <h2>1000 Items Deploying On</h2>
+        <p class="launch-date">1st May 2025 | 12:00 AM IST</p>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span id="days">00</span>
+            <small>Days</small>
+          </div>
+          <div class="countdown-item">
+            <span id="hours">00</span>
+            <small>Hours</small>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+          </div>
+        </div>
+      </div>
+    </section>
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <button class="reserve-button snipcart-add-item" 
+        data-item-id="sneaker-1" 
+        data-item-price="10000" 
+        data-item-url="/" 
+        data-item-name="1K Premium Sneakers"
+        data-item-custom1-name="Customization Notes">
+        Reserve Your Pair Now
+      </button>
+    </section>
 
-/* 3D Product Viewer Styles */
-.product-viewer-container {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  border-radius: 16px;
-  overflow: hidden;
-  background: rgba(0,0,0,0.1);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-}
+    <!-- Features -->
+    <section class="features-section">
+      <h2>Why Choose Us?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Unique Design Experience</h3>
+          <p>Personalized creative process with experts</p>
+        </div>
+        <div class="feature-card">
+          <h3>Executive Visits</h3>
+          <p>At-home size & style selection</p>
+        </div>
+        <div class="feature-card">
+          <h3>Custom Engraving</h3>
+          <p>Signature, dates, or special messages</p>
+        </div>
+        <div class="feature-card">
+          <h3>Limited Edition</h3>
+          <p>Only 1000 items per product line</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-#sneaker-3dview {
-  width: 100%;
-  height: 100%;
-  cursor: grab;
-}
+  <!-- Footer -->
+  <footer class="main-footer">
+    <p>&copy; 2025 1K Products. All rights reserved.</p>
+  </footer>
 
-#sneaker-3dview:active {
-  cursor: grabbing;
-}
+  <!-- JavaScript -->
+  <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+  <script>
+    // Countdown Timer
+    function updateCountdown() {
+      const countDownDate = new Date("May 1, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
 
-.viewer-controls {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 1rem;
-  z-index: 10;
-}
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-.rotate-button, .zoom-button {
-  background: rgba(212, 175, 55, 0.8);
-  color: var(--navy);
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
+      document.getElementById("days").textContent = days.toString().padStart(2, "0");
+      document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+      document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+      document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
 
-.rotate-button:hover, .zoom-button:hover {
-  background: rgba(212, 175, 55, 1);
-  transform: translateY(-2px);
-}
+      if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.querySelector(".countdown-container").innerHTML = `
+          <h2 class="drop-live">Drop Live! Reserve Now</h2>
+          <p class="limited-stock">Last few pairs remaining!</p>
+        `;
+      }
+    }
 
-/* Enhanced Product Showcase */
-.product-showcase {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding: 6rem 8%;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
+    // Initialize Countdown
+    const countdownTimer = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call
 
-/* Updated Countdown Timer */
-.countdown-item {
-  position: relative;
-  overflow: hidden;
-}
+    // Scroll Reveal Animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.15 });
 
-.countdown-item::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, 
-    transparent 45%,
-    rgba(212, 175, 55, 0.1) 50%,
-    transparent 55%
-  );
-  animation: shine 3s infinite;
-}
+    revealElements.forEach(element => revealObserver.observe(element));
 
-@keyframes shine {
-  0% { transform: translateX(-50%) rotate(45deg); }
-  100% { transform: translateX(150%) rotate(45deg); }
-}
-
-/* Responsive Updates */
-@media (max-width: 768px) {
-  .product-viewer-container {
-    height: 400px;
-  }
-  
-  .viewer-controls {
-    bottom: 10px;
-    flex-direction: column;
-    width: 90%;
-  }
-  
-  .rotate-button, .zoom-button {
-    width: 100%;
-    padding: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-viewer-container {
-    height: 300px;
-  }
-  
-  .loader-spinner {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .loading-text {
-    font-size: 1rem;
-  }
-}
+    // Set Active Navigation Link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if(link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
